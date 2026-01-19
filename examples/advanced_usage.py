@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Advanced usage example for package_name.
+"""Advanced usage example for test3project.
 
 This example demonstrates advanced features and best practices.
 """
 
 from pathlib import Path
 
-from package_name import __version__, get_logger, setup_logging
+from test3project import __version__, get_logger, setup_logging
 
 # Configure logging with both console and file output
 # Console: simple output (INFO: message)
@@ -80,7 +80,7 @@ class AdvancedExample:
 
 def main() -> None:
     """Run advanced usage examples."""
-    print(f"Advanced Examples - package_name v{__version__}")
+    print(f"Advanced Examples - test3project v{__version__}")
     print("=" * 60)
     print()
 

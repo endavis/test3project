@@ -3,13 +3,13 @@ requires = ["hatchling>=1.24", "hatch-vcs>=0.4"]
 build-backend = "hatchling.build"
 
 [project]
-name = "package_name"
-description = "A short description of your package"
+name = "test3project"
+description = "a test project"
 readme = {file = "README.md", content-type = "text/markdown"}
 requires-python = ">=3.12"
 dynamic = ["version"]
 authors = [
-    {name = "Your Name", email = "your.email@example.com"},
+    {name = "Eric Davis", email = "endavis+test3project@endavis.net"},
 ]
 license = {file = "LICENSE"}
 keywords = ["keyword1", "keyword2"]
@@ -48,15 +48,15 @@ security = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/username/package_name"
-Repository = "https://github.com/username/package_name"
-Documentation = "https://github.com/username/package_name/tree/main/docs"
-Issues = "https://github.com/username/package_name/issues"
+Homepage = "https://github.com/endavis/test3project"
+Repository = "https://github.com/endavis/test3project"
+Documentation = "https://github.com/endavis/test3project/tree/main/docs"
+Issues = "https://github.com/endavis/test3project/issues"
 
 [project.scripts]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/package_name"]
+packages = ["src/test3project"]
 
 [tool.hatch.version]
 source = "vcs"
@@ -64,7 +64,7 @@ tag-pattern = "^(?:v|d)(?P<version>.+)$"
 fallback-version = "0.0.0"
 
 [tool.hatch.build.hooks.vcs]
-version-file = "src/package_name/_version.py"
+version-file = "src/test3project/_version.py"
 
 [tool.ruff]
 line-length = 100
@@ -136,7 +136,7 @@ python_functions = ["test_*"]
 
 [tool.coverage.run]
 branch = true
-source = ["package_name"]
+source = ["test3project"]
 
 [tool.coverage.report]
 skip_covered = false

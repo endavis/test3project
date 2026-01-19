@@ -1,10 +1,10 @@
 # API Reference
 
-Complete API documentation for Package Name.
+Complete API documentation for test3project.
 
 ## Core Module
 
-### `package_name.core`
+### `test3project.core`
 
 Core functionality for the package.
 
@@ -27,7 +27,7 @@ Return a greeting message.
 **Example:**
 
 ```python
-from package_name import greet
+from test3project import greet
 
 # Default greeting
 message = greet()
@@ -52,7 +52,7 @@ print(message)  # Output: "Hello, Python!"
 ### `__version__`
 
 ```python
-from package_name import __version__
+from test3project import __version__
 ```
 
 The current version of the package as a string.
@@ -60,8 +60,8 @@ The current version of the package as a string.
 **Example:**
 
 ```python
-import package_name
-print(package_name.__version__)  # Derived from the git tag by hatch-vcs
+import test3project
+print(test3project.__version__)  # Derived from the git tag by hatch-vcs
 ```
 
 ## Module Structure
@@ -69,7 +69,7 @@ print(package_name.__version__)  # Derived from the git tag by hatch-vcs
 The package is organized as follows:
 
 ```
-package_name/
+test3project/
 ├── __init__.py      # Package initialization, exports greet and __version__
 ├── _version.py      # Version information (generated from git tags at build time)
 └── core.py          # Core functionality (greet function)
@@ -80,7 +80,7 @@ package_name/
 All public APIs include type hints for better IDE support and type checking:
 
 ```python
-from package_name import greet
+from test3project import greet
 
 # Type checkers will infer the correct types
 message: str = greet("Python")
@@ -92,9 +92,9 @@ This template provides a starting point. To add your own functionality:
 
 ### Adding a New Module
 
-1. Create a new file in `src/package_name/`:
+1. Create a new file in `src/test3project/`:
    ```python
-   # src/package_name/new_module.py
+   # src/test3project/new_module.py
    """New module description."""
 
    def new_function(param: str) -> str:
@@ -112,7 +112,7 @@ This template provides a starting point. To add your own functionality:
 3. Add tests in `tests/`:
    ```python
    # tests/test_new_module.py
-   from package_name import new_function
+   from test3project import new_function
 
    def test_new_function() -> None:
        """Test new_function."""
@@ -122,7 +122,7 @@ This template provides a starting point. To add your own functionality:
 ### Adding Exception Classes
 
 ```python
-# src/package_name/exceptions.py
+# src/test3project/exceptions.py
 """Package exceptions."""
 
 class PackageError(Exception):
@@ -137,7 +137,7 @@ class ValidationError(PackageError):
 Export them:
 
 ```python
-# src/package_name/__init__.py
+# src/test3project/__init__.py
 from .exceptions import PackageError, ValidationError
 
 __all__ = [
@@ -154,7 +154,7 @@ __all__ = [
 
 2. Create CLI module:
    ```python
-   # src/package_name/cli.py
+   # src/test3project/cli.py
    """Command-line interface."""
    import click
    from . import greet
@@ -169,7 +169,7 @@ __all__ = [
 3. Add entry point in `pyproject.toml`:
    ```toml
    [project.scripts]
-   package-cli = "package_name.cli:main"
+   package-cli = "test3project.cli:main"
    ```
 
 ## Documentation Best Practices
@@ -218,7 +218,7 @@ All public APIs should have comprehensive tests:
 uv run pytest -v
 
 # Run with coverage
-uv run pytest --cov=package_name --cov-report=term-missing
+uv run pytest --cov=test3project --cov-report=term-missing
 
 # Run specific test
 uv run pytest tests/test_example.py::test_version -v
@@ -233,13 +233,13 @@ Run mypy to verify type hints:
 uv run mypy src/
 
 # Check specific file
-uv run mypy src/package_name/core.py
+uv run mypy src/test3project/core.py
 ```
 
 ## Changelog
 
-See [CHANGELOG.md](https://github.com/username/package_name/blob/main/CHANGELOG.md) for version history and changes.
+See [CHANGELOG.md](https://github.com/endavis/test3project/blob/main/CHANGELOG.md) for version history and changes.
 
 ## Contributing
 
-See [CONTRIBUTING.md](https://github.com/username/package_name/blob/main/.github/CONTRIBUTING.md) for information on contributing to the API.
+See [CONTRIBUTING.md](https://github.com/endavis/test3project/blob/main/.github/CONTRIBUTING.md) for information on contributing to the API.

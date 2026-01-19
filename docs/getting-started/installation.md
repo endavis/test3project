@@ -7,7 +7,7 @@ If you're using this repository as a **template** for your own project:
 ### 1. Clone the Template
 
 ```bash
-git clone https://github.com/username/package_name.git my-project
+git clone https://github.com/endavis/test3project.git my-project
 cd my-project
 ```
 
@@ -24,7 +24,7 @@ This will prompt you for:
 - Package name (Python import name)
 - PyPI package name
 - Author information
-- GitHub username
+- GitHub endavis
 
 The script will automatically:
 - Rename the package directory
@@ -64,13 +64,13 @@ If you're installing this as a **package** (after it's been published):
 ### Using pip
 
 ```bash
-pip install package-name
+pip install test3project
 ```
 
 ### Using uv (recommended)
 
 ```bash
-uv pip install package-name
+uv pip install test3project
 ```
 
 ## Install from Source
@@ -78,8 +78,8 @@ uv pip install package-name
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/username/package_name.git
-cd package_name
+git clone https://github.com/endavis/test3project.git
+cd test3project
 ```
 
 ### Install in Development Mode
@@ -121,8 +121,8 @@ uv pip install -e ".[dev,security]"
 Check that the package is installed correctly:
 
 ```python
-import package_name
-print(package_name.__version__)
+import test3project
+print(test3project.__version__)
 ```
 
 Or from the command line (if CLI is available):
@@ -136,13 +136,13 @@ package-cli --version
 ### From PyPI
 
 ```bash
-pip install --upgrade package-name
+pip install --upgrade test3project
 ```
 
 ### From Source
 
 ```bash
-cd package_name
+cd test3project
 git pull
 uv pip install -e ".[dev]"
 ```
@@ -150,7 +150,7 @@ uv pip install -e ".[dev]"
 ## Uninstallation
 
 ```bash
-pip uninstall package-name
+pip uninstall test3project
 ```
 
 ## Troubleshooting
@@ -166,7 +166,7 @@ python --version
 If you have multiple Python versions:
 
 ```bash
-python3.12 -m pip install package-name
+python3.12 -m pip install test3project
 ```
 
 ### Virtual Environment Issues
@@ -177,7 +177,7 @@ If you encounter issues, try creating a fresh virtual environment:
 rm -rf .venv
 uv venv
 source .venv/bin/activate
-uv pip install package-name
+uv pip install test3project
 ```
 
 ### Permission Errors
@@ -187,7 +187,7 @@ If you get permission errors, use a virtual environment instead of installing gl
 ```bash
 uv venv
 source .venv/bin/activate
-uv pip install package-name
+uv pip install test3project
 ```
 
 ## Next Steps

@@ -11,7 +11,7 @@ Make sure you have the package installed:
 uv pip install -e .
 
 # Or install from PyPI
-pip install package-name
+pip install test3project
 ```
 
 Then run any example:

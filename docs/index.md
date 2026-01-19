@@ -1,10 +1,10 @@
-# Package Name Documentation
+# test3project Documentation
 
-Welcome to the documentation for Package Name!
+Welcome to the documentation for test3project!
 
 ## Overview
 
-Package Name is a modern Python project template with comprehensive tooling for development, testing, documentation, and deployment.
+test3project is a modern Python project template with comprehensive tooling for development, testing, documentation, and deployment.
 
 ## Quick Links
 
@@ -28,7 +28,7 @@ Package Name is a modern Python project template with comprehensive tooling for 
 ## Quick Start
 
 ```python
-from package_name import greet
+from test3project import greet
 
 # Simple greeting example
 message = greet("Python")

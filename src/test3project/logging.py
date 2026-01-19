@@ -1,4 +1,4 @@
-"""Logging configuration for package_name.
+"""Logging configuration for test3project.
 
 This module provides a centralized logging setup with:
 - ISO8601 timestamps for all log entries

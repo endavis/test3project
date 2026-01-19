@@ -1,10 +1,10 @@
-site_name: Package Name
-site_description: A short description of your package
-site_author: Your Name
-site_url: https://username.github.io/package_name
+site_name: test3project
+site_description: a test project
+site_author: Eric Davis
+site_url: https://endavis.github.io/test3project
 
-repo_name: username/package_name
-repo_url: https://github.com/username/package_name
+repo_name: endavis/test3project
+repo_url: https://github.com/endavis/test3project
 edit_uri: edit/main/docs/
 
 # Theme configuration
@@ -78,6 +78,6 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/username
+      link: https://github.com/endavis
     - icon: fontawesome/brands/python
-      link: https://pypi.org/project/package-name
+      link: https://pypi.org/project/test3project

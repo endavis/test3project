@@ -161,7 +161,7 @@ def task_coverage() -> dict[str, Any]:
     return {
         "actions": [
             "uv run pytest "
-            "--cov=package_name --cov-report=term-missing "
+            "--cov=test3project --cov-report=term-missing "
             "--cov-report=html:tmp/htmlcov --cov-report=xml:tmp/coverage.xml -v"
         ],
         "title": title_with_actions,
@@ -673,10 +673,10 @@ def task_release(increment: str = "") -> dict[str, Any]:
         console.print("\nNext steps:")
         console.print("1. Monitor GitHub Actions for build and publish.")
         console.print(
-            "2. Check TestPyPI: [link=https://test.pypi.org/project/package-name/]https://test.pypi.org/project/package-name/[/link]"
+            "2. Check TestPyPI: [link=https://test.pypi.org/project/test3project/]https://test.pypi.org/project/test3project/[/link]"
         )
         console.print(
-            "3. Check PyPI: [link=https://pypi.org/project/package-name/]https://pypi.org/project/package-name/[/link]"
+            "3. Check PyPI: [link=https://pypi.org/project/test3project/]https://pypi.org/project/test3project/[/link]"
         )
         console.print("4. Verify the updated CHANGELOG.md in the repository.")
 
@@ -1087,10 +1087,10 @@ def task_release_tag() -> dict[str, Any]:
         console.print("\nNext steps:")
         console.print("1. Monitor GitHub Actions for build and publish.")
         console.print(
-            "2. Check TestPyPI: [link=https://test.pypi.org/project/package-name/]https://test.pypi.org/project/package-name/[/link]"
+            "2. Check TestPyPI: [link=https://test.pypi.org/project/test3project/]https://test.pypi.org/project/test3project/[/link]"
         )
         console.print(
-            "3. Check PyPI: [link=https://pypi.org/project/package-name/]https://pypi.org/project/package-name/[/link]"
+            "3. Check PyPI: [link=https://pypi.org/project/test3project/]https://pypi.org/project/test3project/[/link]"
         )
 
     return {

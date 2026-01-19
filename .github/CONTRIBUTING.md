@@ -1,4 +1,4 @@
-# Contributing to Package Name
+# Contributing to test3project
 
 Thank you for your interest in contributing to this project! We welcome contributions from everyone.
 
@@ -42,8 +42,8 @@ This project adheres to the Contributor Covenant [Code of Conduct](CODE_OF_CONDU
 
 ```bash
 # Clone your fork
-git clone https://github.com/YOUR_USERNAME/package_name.git
-cd package_name
+git clone https://github.com/YOUR_USERNAME/test3project.git
+cd test3project
 
 # Set up direnv
 direnv allow
@@ -153,7 +153,7 @@ import click
 import pytest
 
 # Local
-from package_name import module
+from test3project import module
 ```
 
 ## Testing Guidelines
@@ -356,7 +356,7 @@ doit release_dev --type=rc
 **Testing from TestPyPI:**
 
 ```bash
-pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ package-name
+pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ test3project
 ```
 
 ### Production Release Workflow (PyPI)
@@ -515,7 +515,7 @@ git config --global credential.helper store
 # Then git will prompt for credentials on first push
 
 # Option 2: Include token in remote URL (less secure)
-git remote set-url origin https://<token>@github.com/username/repo.git
+git remote set-url origin https://<token>@github.com/endavis/repo.git
 ```
 
 **3. Store as Secret (for CI-based releases):**
@@ -774,7 +774,7 @@ docs: update installation guide (merges PR #29, closes #25)
 
 ```bash
 # Add upstream remote (one-time setup)
-git remote add upstream https://github.com/original-owner/package_name.git
+git remote add upstream https://github.com/original-owner/test3project.git
 
 # Fetch and merge upstream changes
 git checkout main
@@ -788,7 +788,7 @@ git push origin main
 If you have questions:
 
 1. Check the [README.md](README.md) and [AGENTS.md](AGENTS.md)
-2. Search existing [Issues](https://github.com/username/package_name/issues)
+2. Search existing [Issues](https://github.com/endavis/test3project/issues)
 3. Open a new issue with the "question" label
 4. Join our discussions (if available)
 

@@ -1,6 +1,6 @@
 """Tests for core module."""
 
-from package_name import greet
+from test3project import greet
 
 
 def test_greet_default() -> None:

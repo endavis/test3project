@@ -1,11 +1,11 @@
-# Package Name
+# test3project
 
-[![CI](https://github.com/username/package_name/actions/workflows/ci.yml/badge.svg)](https://github.com/username/package_name/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/username/package_name/branch/main/graph/badge.svg)](https://codecov.io/gh/username/package_name)
-[![PyPI version](https://badge.fury.io/py/package-name.svg)](https://badge.fury.io/py/package-name)
+[![CI](https://github.com/endavis/test3project/actions/workflows/ci.yml/badge.svg)](https://github.com/endavis/test3project/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/endavis/test3project/branch/main/graph/badge.svg)](https://codecov.io/gh/endavis/test3project)
+[![PyPI version](https://badge.fury.io/py/test3project.svg)](https://badge.fury.io/py/test3project)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
 
-A short description of your package.
+a test project.
 
 ## Features
 
@@ -16,13 +16,13 @@ A short description of your package.
 ## Installation
 
 ```bash
-pip install package-name
+pip install test3project
 ```
 
 ## Quick Start
 
 ```python
-from package_name import greet
+from test3project import greet
 
 # Example usage
 message = greet("Python")
@@ -78,7 +78,7 @@ The script will:
 
 ```bash
 # Clone the template
-git clone https://github.com/username/package_name.git my-project
+git clone https://github.com/endavis/test3project.git my-project
 cd my-project
 
 # Run the interactive configuration script
@@ -90,7 +90,7 @@ The script will prompt you for:
 - Package name (Python import name)
 - PyPI package name
 - Author name and email
-- GitHub username
+- GitHub endavis
 
 It will automatically:
 - Rename the package directory
@@ -114,8 +114,8 @@ It will automatically:
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Clone repository
-git clone https://github.com/username/package_name.git
-cd package_name
+git clone https://github.com/endavis/test3project.git
+cd test3project
 
 # Create virtual environment and install dependencies
 uv sync --all-extras --dev

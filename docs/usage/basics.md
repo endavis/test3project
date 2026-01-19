@@ -7,7 +7,7 @@ This guide covers both package usage and development workflows.
 ### Basic Usage
 
 ```python
-from package_name import greet
+from test3project import greet
 
 # Simple greeting
 message = greet("World")
@@ -194,7 +194,7 @@ If your package provides a CLI, create convenience tasks:
 def task_run_server():
     """Start development server."""
     return {
-        "actions": ["uv run package-name server --debug --port 8080"],
+        "actions": ["uv run test3project server --debug --port 8080"],
         "title": title_with_actions,
     }
 
@@ -202,9 +202,9 @@ def task_init_db():
     """Initialize database."""
     return {
         "actions": [
-            "uv run package-name db create",
-            "uv run package-name db migrate",
-            "uv run package-name db seed-dev",
+            "uv run test3project db create",
+            "uv run test3project db migrate",
+            "uv run test3project db seed-dev",
         ],
         "title": title_with_actions,
     }
@@ -225,8 +225,8 @@ def task_deploy_dev():
     """Deploy to development environment."""
     return {
         "actions": [
-            "uv run package-name validate --env dev",
-            "uv run package-name deploy --env dev --auto-approve",
+            "uv run test3project validate --env dev",
+            "uv run test3project deploy --env dev --auto-approve",
         ],
         "title": title_with_actions,
     }
@@ -245,7 +245,7 @@ def task_deploy_prod():
 
         # Run deployment
         subprocess.run(
-            "uv run package-name deploy --env prod",
+            "uv run test3project deploy --env prod",
             shell=True,
             check=True
         )
@@ -298,9 +298,9 @@ def task_process_data():
     """Run data processing pipeline."""
     return {
         "actions": [
-            "uv run package-name extract --source api --output tmp/raw.json",
-            "uv run package-name transform --input tmp/raw.json --output tmp/clean.json",
-            "uv run package-name load --input tmp/clean.json --target postgres",
+            "uv run test3project extract --source api --output tmp/raw.json",
+            "uv run test3project transform --input tmp/raw.json --output tmp/clean.json",
+            "uv run test3project load --input tmp/clean.json --target postgres",
         ],
         "title": title_with_actions,
     }
@@ -309,7 +309,7 @@ def task_backup_data():
     """Backup production database."""
     return {
         "actions": [
-            "uv run package-name backup create --env prod --output backups/$(date +%Y%m%d-%H%M%S).sql.gz",
+            "uv run test3project backup create --env prod --output backups/$(date +%Y%m%d-%H%M%S).sql.gz",
         ],
         "title": title_with_actions,
     }
@@ -327,7 +327,7 @@ def task_restore_data():
         latest = backups[0]
         print(f"Restoring from: {latest}")
         subprocess.run(
-            f"uv run package-name backup restore --file {latest} --env dev",
+            f"uv run test3project backup restore --file {latest} --env dev",
             shell=True,
             check=True
         )
@@ -390,7 +390,7 @@ def task_deploy():
 
         # Deploy
         subprocess.run(
-            f"uv run package-name deploy --env {env}",
+            f"uv run test3project deploy --env {env}",
             shell=True,
             check=True
         )
@@ -427,8 +427,8 @@ def task_validate_config():
     """Validate all configuration files."""
     return {
         "actions": [
-            "uv run package-name config validate --env dev",
-            "uv run package-name config validate --env prod",
+            "uv run test3project config validate --env dev",
+            "uv run test3project config validate --env prod",
         ],
         "title": title_with_actions,
     }
@@ -438,8 +438,8 @@ def task_health_check():
     return {
         "actions": [
             "curl -f http://localhost:8000/health || echo 'Service down!'",
-            "uv run package-name db ping",
-            "uv run package-name cache status",
+            "uv run test3project db ping",
+            "uv run test3project cache status",
         ],
         "title": title_with_actions,
     }
@@ -454,10 +454,10 @@ def task_generate_models():
     """Generate data models from OpenAPI spec."""
     return {
         "actions": [
-            "uv run datamodel-codegen --input api-spec.yaml --output src/package_name/models/",
+            "uv run datamodel-codegen --input api-spec.yaml --output src/test3project/models/",
         ],
         "file_dep": ["api-spec.yaml"],
-        "targets": ["src/package_name/models/api.py"],
+        "targets": ["src/test3project/models/api.py"],
         "title": title_with_actions,
     }
 
@@ -596,7 +596,7 @@ uv run ruff check src/ tests/
 uv run mypy src/
 
 # Tests with coverage
-uv run pytest --cov=package_name --cov-report=xml:tmp/coverage.xml --cov-report=term -v
+uv run pytest --cov=test3project --cov-report=xml:tmp/coverage.xml --cov-report=term -v
 ```
 
 ### Updating Dependencies
@@ -733,7 +733,7 @@ uv run pytest -v
 uv run mypy --show-error-codes --pretty src/
 
 # Check specific file
-uv run mypy src/package_name/core.py
+uv run mypy src/test3project/core.py
 ```
 
 #### Pre-commit Hook Failures
@@ -795,5 +795,5 @@ uv run pre-commit install
 ## Next Steps
 
 - Check the [API Reference](../reference/api.md) for complete documentation
-- Read [CONTRIBUTING.md](https://github.com/username/package_name/blob/main/.github/CONTRIBUTING.md) for contribution guidelines
+- Read [CONTRIBUTING.md](https://github.com/endavis/test3project/blob/main/.github/CONTRIBUTING.md) for contribution guidelines
 - Review the docs and TODOs in this template to identify improvements for your project

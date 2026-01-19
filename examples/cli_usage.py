@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""CLI usage example for package_name.
+"""CLI usage example for test3project.
 
 This example demonstrates how to use the command-line interface
 programmatically and provides examples of CLI commands.

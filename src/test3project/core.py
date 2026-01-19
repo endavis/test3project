@@ -1,4 +1,4 @@
-"""Core functionality for package_name."""
+"""Core functionality for test3project."""
 
 
 def greet(name: str = "World") -> str:

@@ -91,12 +91,12 @@ Interactively prompts for project information and replaces all placeholder value
 
 | Prompt | Default | Description |
 |--------|---------|-------------|
-| Project name | Package Name | Display name for the project |
-| Package name | package_name | Python import name (snake_case) |
-| PyPI name | package-name | Name on PyPI (typically hyphenated) |
-| Author name | Your Name | Author for package metadata |
-| Author email | your.email@example.com | Contact email |
-| GitHub username | username | Your GitHub username |
+| Project name | test3project | Display name for the project |
+| Package name | test3project | Python import name (snake_case) |
+| PyPI name | test3project | Name on PyPI (typically hyphenated) |
+| Author name | Eric Davis | Author for package metadata |
+| Author email | endavis+test3project@endavis.net | Contact email |
+| GitHub endavis | endavis | Your GitHub endavis |
 | Description | A short description... | One-line project description |
 
 ### Files Modified
@@ -115,7 +115,7 @@ Interactively prompts for project information and replaces all placeholder value
 ### Actions Performed
 
 1. Replaces placeholder strings with provided values
-2. Renames `src/package_name/` to `src/your_package_name/`
+2. Renames `src/test3project/` to `src/your_test3project/`
 3. Updates all URLs and badge links
 4. Updates documentation references
 
@@ -190,7 +190,7 @@ The script copies these template files/directories:
 - `.devcontainer/`
 - `.claude/`, `.codex/`, `.gemini/`
 - `tools/pyproject_template/`
-- `src/package_name/` (template source)
+- `src/test3project/` (template source)
 - `tests/` (template tests)
 
 ### Backup Behavior
@@ -204,7 +204,7 @@ The script copies these template files/directories:
 After running the script:
 
 1. Run `python tools/pyproject_template/configure.py`
-2. Move your code into `src/your_package_name/`
+2. Move your code into `src/your_test3project/`
 3. Merge your dependencies into `pyproject.toml`
 4. Run `uv lock` to regenerate lock file
 5. Run `doit check` to verify

@@ -1,10 +1,10 @@
-"""Example tests for package_name."""
+"""Example tests for test3project."""
 
 from pathlib import Path
 
 import pytest
 
-from package_name import __version__, greet
+from test3project import __version__, greet
 
 
 def test_version() -> None:

@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from package_name.logging import (
+from test3project.logging import (
     SimpleConsoleFormatter,
     StructuredFileFormatter,
     get_logger,

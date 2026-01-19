@@ -26,7 +26,7 @@ jobs:
       - name: Check for breaking changes
         run: |
           # Check against the base branch (usually main)
-          griffe check package_name \
+          griffe check test3project \
             --against "origin/${{ github.base_ref }}" \
             --search src \
             --verbose
