@@ -1,0 +1,32 @@
+name: Breaking Change Detection
+
+on:
+  pull_request:
+    types: [opened, synchronize, edited]
+
+jobs:
+  detect-breaking-changes:
+    name: Detect API Breaking Changes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Need full history for comparison
+
+      - name: Fetch base branch
+        run: git fetch origin ${{ github.base_ref }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install griffe
+        run: pip install griffe
+
+      - name: Check for breaking changes
+        run: |
+          # Check against the base branch (usually main)
+          griffe check package_name \
+            --against "origin/${{ github.base_ref }}" \
+            --search src \
+            --verbose

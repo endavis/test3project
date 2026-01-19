@@ -1,0 +1,102 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.7.4
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.13.0
+    hooks:
+      - id: mypy
+        additional_dependencies: []
+        args: [--ignore-missing-imports]
+        exclude: ^(\.claude/|\.gemini/|\.codex/|tools/pyproject_template/)
+
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.10
+    hooks:
+      - id: bandit
+        args: [-c, pyproject.toml]
+        additional_dependencies: ["bandit[toml]"]
+
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.3.0
+    hooks:
+      - id: codespell
+        additional_dependencies: [tomli]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: detect-private-key
+
+  # Conventional commits enforcement
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v3.4.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+        args: [--strict]
+
+  # Local hooks for project-specific checks
+  - repo: local
+    hooks:
+      # Branch naming enforcement
+      - id: check-branch-name
+        name: Check branch naming convention
+        entry: |
+          bash -c '
+          BRANCH=$(git branch --show-current);
+          if [[ "$BRANCH" != "main" && "$BRANCH" != "develop" && ! "$BRANCH" =~ ^(issue|feat|fix|docs|test|refactor|chore|ci|perf|hotfix)/[0-9]+-[a-z0-9\-]+$ && ! "$BRANCH" =~ ^release/.+ ]]; then
+            echo "❌ Branch name must follow convention:";
+            echo "   - issue/<num>-<description>";
+            echo "   - feat/<num>-<description>";
+            echo "   - fix/<num>-<description>";
+            echo "   - docs/<num>-<description>";
+            echo "   - test/<num>-<description>";
+            echo "   - refactor/<num>-<description>";
+            echo "   - chore/<num>-<description>";
+            echo "   - ci/<num>-<description>";
+            echo "   - perf/<num>-<description>";
+            echo "   - hotfix/<description>";
+            echo "   - release/<version>";
+            echo "";
+            echo "Current branch: $BRANCH";
+            exit 1;
+          fi'
+        language: system
+        pass_filenames: false
+        always_run: true
+
+      # Prevent direct commits to main branch
+      - id: no-commit-to-main
+        name: Prevent commits to main branch
+        entry: |
+          bash -c '
+          BRANCH=$(git branch --show-current);
+          if [[ "$BRANCH" == "main" ]]; then
+            echo "❌ ERROR: Direct commits to main branch are not allowed!";
+            echo "";
+            echo "The mandatory workflow is: Issue → Branch → Commit → PR → Merge";
+            echo "";
+            echo "Please follow these steps:";
+            echo "  1. Ensure a GitHub issue exists for your change";
+            echo "  2. Create a feature branch: git checkout -b <type>/<issue#>-<description>";
+            echo "  3. Make your changes and commit on the feature branch";
+            echo "  4. Push and create a Pull Request";
+            echo "  5. Merge the PR after review and CI checks pass";
+            echo "";
+            echo "See AGENTS.md and .github/CONTRIBUTING.md for details.";
+            exit 1;
+          fi'
+        language: system
+        pass_filenames: false
+        always_run: true

@@ -1,0 +1,83 @@
+site_name: Package Name
+site_description: A short description of your package
+site_author: Your Name
+site_url: https://username.github.io/package_name
+
+repo_name: username/package_name
+repo_url: https://github.com/username/package_name
+edit_uri: edit/main/docs/
+
+# Theme configuration
+# Default: material (modern, responsive theme)
+theme:
+  name: material
+  # Optional features (uncomment to enable)
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Documentation Index: TABLE_OF_CONTENTS.md
+  - Getting Started:
+      - Installation: getting-started/installation.md
+  - Usage:
+      - Basics: usage/basics.md
+  - Development:
+      - Coding Standards: development/coding-standards.md
+      - CI/CD & Testing: development/ci-cd-testing.md
+      - Extensions: development/extensions.md
+      - Release & Automation: development/release-and-automation.md
+      - AI Agent Setup: development/AI_SETUP.md
+      - AI Command Blocking: development/ai/command-blocking.md
+  - Template:
+      - Overview: template/index.md
+      - Template Manager: template/manage.md
+      - New Project Setup: template/new-project.md
+      - Migration Guide: template/migration.md
+      - Keeping Up to Date: template/updates.md
+      - Tools Reference: template/tools-reference.md
+  - Reference:
+      - API Reference: reference/api.md
+  - Examples: examples/README.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/username
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/package-name
